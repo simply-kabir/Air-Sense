@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import type { AQIStation } from '@/types'
 import { getAQIColor } from '@/lib/aqi-utils'
-
+import * as THREE from 'three';
 interface AQIGlobeProps {
   userLat?: number
   userLon?: number
