@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --navy-900: #03070F;
+  --navy-800: #060B1A;
+  --navy-700: #0A1128;
+  --navy-600: #0F1A3A;
+  --navy-500: #162050;
+  --navy-400: #1E2D6B;
+  --blue-700: #1A3A7A;
+  --blue-500: #2553B8;
+  --blue-300: #3B6FE8;
+  --gold-400: #F5A623;
+  --gold-300: #FFB84D;
+  --gold-200: #FFD080;
+  --gold-100: #FFF0C4;
+  --cyan-400: #00D4FF;
+  --cyan-200: #4DDFFF;
+  --white: #F0F4FF;
+  --muted: #8899CC;
+  --muted2: #556088;
+  --aqi-good:      #00E5A0;
+  --aqi-moderate:  #FFD60A;
+  --aqi-sensitive: #FF8C00;
+  --aqi-unhealthy: #FF3B4E;
+  --aqi-very:      #9B2FFF;
+  --aqi-hazardous: #7B0000;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--navy-800);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--navy-700); }
+::-webkit-scrollbar-thumb { background: var(--navy-400); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue-300); }
+
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+.glass {
+  background: rgba(15, 26, 58, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 111, 232, 0.15);
+}
+.glass-gold {
+  background: rgba(15, 26, 58, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+}
+.glass-strong {
+  background: rgba(10, 17, 40, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(59, 111, 232, 0.2);
+}
+
+.glow-gold { box-shadow: 0 0 30px rgba(245,166,35,0.25), 0 0 60px rgba(245,166,35,0.1); }
+.glow-blue { box-shadow: 0 0 30px rgba(59,111,232,0.3), 0 0 60px rgba(59,111,232,0.1); }
+.glow-cyan { box-shadow: 0 0 20px rgba(0,212,255,0.3); }
+.text-glow-gold { text-shadow: 0 0 30px rgba(245,166,35,0.6); }
+.text-glow-cyan { text-shadow: 0 0 20px rgba(0,212,255,0.5); }
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #F5A623 0%, #FFD080 40%, #F5A623 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+.gradient-text-blue {
+  background: linear-gradient(135deg, #3B6FE8 0%, #00D4FF 50%, #3B6FE8 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--navy-600) 25%, var(--navy-500) 50%, var(--navy-600) 75%);
+  background-size: 200% auto;
+  animation: skeleton-load 1.5s linear infinite;
+  border-radius: 8px;
+}
+@keyframes skeleton-load {
+  0%   { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
+
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245,166,35,0.3) !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.leaflet-container {
+  background: #060B1A !important;
+  font-family: var(--font-body) !important;
+}
+.leaflet-tile {
+  filter: brightness(0.5) saturate(0.2) hue-rotate(200deg);
+}
+.leaflet-popup-content-wrapper {
+  background: #0F1A3A !important;
+  border: 1px solid rgba(59,111,232,0.25) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+  color: #F0F4FF !important;
+}
+.leaflet-popup-tip { background: #0F1A3A !important; }
+.leaflet-popup-close-button { color: #556088 !important; }
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(59,111,232,0.08) !important;
+}
+.recharts-text {
+  fill: var(--muted) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+}
+
+.aqi-marker {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  color: #06070F;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.3);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: transform 0.15s ease;
+}
+.aqi-marker:hover { transform: scale(1.25); }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes fade-up {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes scale-in {
+  from { opacity:0; transform:scale(0.92); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+.animate-float       { animation: float 6s ease-in-out infinite; }
+.animate-spin-slow   { animation: spin-slow 20s linear infinite; }
+.animate-fade-up     { animation: fade-up 0.6s ease-out forwards; }
+.animate-fade-up-d1  { animation: fade-up 0.6s 0.10s ease-out both; }
+.animate-fade-up-d2  { animation: fade-up 0.6s 0.22s ease-out both; }
+.animate-fade-up-d3  { animation: fade-up 0.6s 0.36s ease-out both; }
+.animate-fade-up-d4  { animation: fade-up 0.6s 0.50s ease-out both; }
+.animate-fade-up-d5  { animation: fade-up 0.6s 0.65s ease-out both; }
+.animate-scale-in    { animation: scale-in 0.5s ease-out both; }
+.animate-fade-in     { animation: fade-in 0.8s ease-out both; }
