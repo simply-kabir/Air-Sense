@@ -64,8 +64,6 @@ export default function AQIMap({
 
     const initMap = async () => {
       const L = (await import('leaflet')).default
-      await import('leaflet/dist/leaflet.css')
-
       if (!containerRef.current) return
 
       const map = L.map(containerRef.current, {

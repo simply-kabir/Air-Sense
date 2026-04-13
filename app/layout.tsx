@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { LayoutShell } from '@/components/ui/LayoutShell'
+import 'leaflet/dist/leaflet.css';
 
 export const metadata: Metadata = {
   title: 'AirPulse — Real-Time Air Quality Dashboard',
