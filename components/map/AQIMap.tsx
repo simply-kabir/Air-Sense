@@ -12,6 +12,7 @@ interface AQIMapProps {
   onStationClick?: (station: AQIStation) => void
   loading?: boolean
   className?: string
+  style?: React.CSSProperties;
 }
 
 // ─── Popup HTML builder ───────────────────────────────────────────────────────
