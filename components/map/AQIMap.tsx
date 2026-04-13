@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useCallback, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getAQIColor, getAQICategory, formatAQI } from '@/lib/aqi-utils'
 import type { AQIStation, MapViewport } from '@/types'
-
+import * as THREE from 'three';
 interface AQIMapProps {
   stations: AQIStation[]
   viewport: MapViewport
