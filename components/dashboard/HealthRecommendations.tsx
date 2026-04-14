@@ -41,15 +41,25 @@ export function HealthRecommendations({ aqi, loading, className }: HealthRecomme
           border: `1px solid ${color}25`,
         }}
       >
-        <div className="text-xs font-mono text-muted uppercase tracking-wider mb-3">
+        {/* FIX 1: Changed from text-muted to dark purple inline style */}
+        <div 
+          className="text-xs font-mono uppercase tracking-wider mb-3 font-bold"
+          style={{ color: '#2D1B69' }}
+        >
           Air Bear Says 🐻
         </div>
-        <p
-          className="text-base font-body font-500 leading-relaxed"
-          style={{ color: 'var(--white)' }}
+
+        {/* FIX 2: Changed from var(--white) to dark purple, added a white pill background */}
+        <div
+          className="rounded-2xl p-3 text-base font-body leading-relaxed"
+          style={{ 
+            background: 'rgba(255,255,255,0.6)', 
+            color: '#2D1B69',
+            fontWeight: 500
+          }}
         >
           {getAirBearMessage(aqi)}
-        </p>
+        </div>
       </div>
     )
   }

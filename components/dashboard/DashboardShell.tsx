@@ -204,9 +204,6 @@ export function DashboardShell() {
             {isKids ? (
               <div className="rounded-3xl p-6 flex flex-col items-center text-center" style={{ background: `${aqiColor}15`, border: `2px solid ${aqiColor}35` }}>
                 {loading ? <div className="w-36 h-40 skeleton rounded-3xl" /> : <AirBear aqi={aqi} size={160} animated />}
-                <div className="mt-4 text-sm font-body leading-relaxed px-2" style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.8)', borderRadius: 16, padding: '12px 16px', color: '#2D1B69' }}>
-                  🐻 {loading ? '…' : getAirBearMessage(aqi)}
-                </div>
               </div>
             ) : (
               <AQICard station={station} loading={loading} isAutoDetect={isAutoDetect} cityAvgAqi={cityAQIData?.avg ?? null} nearbyCount={cityAQIData?.count ?? 0} />
